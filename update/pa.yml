@@ -1,5 +1,7 @@
----
-   - name: Aktualisiere die Paketlisten
+- hosts: all
+  become: yes
+  tasks:
+    - name: Aktualisiere die Paketlisten
       apt:
         update_cache: yes
  
