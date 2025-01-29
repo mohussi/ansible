@@ -1,19 +1,21 @@
----
-- hosts: all
+- name: pa
+  become: yes
+  become_user: root
+  hosts: all
   tasks:
     - name: Aktualisiere die Paketlisten
       apt:
         update_cache: yes
- 
+
     - name: Führe das Dist-Upgrade durch
       apt:
         upgrade: dist
         autoremove: yes
- 
+
     - name: Bereinige alte Pakete
       apt:
         autoclean: yes
- 
+
     - name: Entferne nicht mehr benötigte Pakete
       apt:
         autoremove: yes
