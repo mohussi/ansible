@@ -1,0 +1,22 @@
+---
+- name: UCS Server Upgrade
+  hosts: all
+  become: yes
+  tasks:
+    - name: Disable App Updates and Upgrade UCS
+      ansible.builtin.command:
+        cmd: "univention-upgrade --ignoressh --disable-app-updates --noninteractive"
+      register: disable_upgrade_output
+
+    - name: Show Output of Disable App Updates Upgrade
+      ansible.builtin.debug:
+        var: disable_upgrade_output.stdout
+
+    - name: Enable App Updates and Upgrade UCS
+      ansible.builtin.command:
+        cmd: "univention-upgrade --ignoressh --enable-app-updates --noninteractive"
+      register: enable_upgrade_output
+
+    - name: Show Output of Enable App Updates Upgrade
+      ansible.builtin.debug:
+        var: enable_upgrade_output.stdout
