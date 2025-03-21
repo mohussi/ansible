@@ -1,4 +1,4 @@
-- name: pa
+- name: Debian
   become: yes
   become_user: root
   hosts: all
