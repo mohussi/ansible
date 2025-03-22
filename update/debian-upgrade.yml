@@ -1,7 +1,6 @@
 - name: Debian
-  become: yes
-  become_user: root
   hosts: all
+  become: yes
   tasks:
     - name: Aktualisiere die Paketlisten
       apt:
