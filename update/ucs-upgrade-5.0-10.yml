@@ -3,7 +3,7 @@
   become: yes
   tasks:
       - name: Prune old Kernels
-      ansible.builtin.command:
+        ansible.builtin.command:
         cmd: "univention-prune-kernels"
       
     - name: Disable App Updates and Upgrade UCS
