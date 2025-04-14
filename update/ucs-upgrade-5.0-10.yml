@@ -2,8 +2,8 @@
   hosts: all
   become: yes
   tasks:
-      - name: Prune old Kernels
-        ansible.builtin.command:
+    - name: Prune old Kernels
+      ansible.builtin.command:
         cmd: "univention-prune-kernels"
       
     - name: Disable App Updates and Upgrade UCS
