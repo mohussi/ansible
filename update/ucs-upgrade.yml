@@ -4,7 +4,7 @@
   tasks:
     - name: Disable App Updates and Upgrade UCS
       ansible.builtin.command:
-        cmd: "univention-upgrade --ignoressh --disable-app-updates --noninteractive"
+        cmd: "univention-upgrade --ignoressh --disable-app-updates --noninteractive --updateto 5.0-10"
       register: disable_upgrade_output
 
     - name: Show Output of Disable App Updates Upgrade
@@ -13,7 +13,7 @@
 
     - name: Enable App Updates and Upgrade UCS
       ansible.builtin.command:
-        cmd: "univention-upgrade --ignoressh --enable-app-updates --noninteractive"
+        cmd: "univention-upgrade --ignoressh --enable-app-updates --noninteractive --updateto 5.0-10"
       register: enable_upgrade_output
 
     - name: Show Output of Enable App Updates Upgrade
